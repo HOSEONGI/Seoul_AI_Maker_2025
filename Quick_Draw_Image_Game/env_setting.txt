@@ -1,0 +1,25 @@
+# 아래 세팅 커맨드는 현재 맥북 기준으로 작성되었습니다. 
+# 모든 환경에서 동일하게 적용되는 것은 아니나
+# python 3.10.x 버전으로 진행하는 것을 권장드립니다.
+
+
+brew install pyenv
+
+echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
+echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
+echo 'eval "$(pyenv init --path)"' >> ~/.zshrc
+echo 'eval "$(pyenv init -)"' >> ~/.zshrc
+source ~/.zshrc
+
+pyenv install 3.10.13
+
+cd {개인 파일 환경 주소}
+
+pyenv local 3.10.13
+
+python -m venv .venv
+source .venv/bin/activate
+
+pip install --upgrade pip
+pip install opencv-python pillow numpy
+pip install tensorflow-macos
